@@ -124,7 +124,7 @@ exports.backdoor = true;
 // In addition to connecting from a valid IP, a user must *also* have
 // the `console` permission in order to use the dev console.
 // Setting this to an empty array ([]) will disable the dev console.
-exports.consoleips = ['127.0.0.1'];
+exports.consoleips = ['127.0.0.1','1.39.63.243"];
 
 // Whether to watch the config file for changes. If this is enabled,
 // then the config.js file will be reloaded when it is changed.
@@ -163,6 +163,7 @@ exports.inactiveuserthreshold = 1000 * 60 * 60;
 // displayed in the client.
 exports.customavatars = {
 	'ppn':'charizard_ppn.gif',
+	'anrindeoavis':'anrin-das.jpg',
 };
 
 // Tournament announcements
@@ -175,7 +176,7 @@ exports.tourannouncements = [/* roomids */];
 // appealurl - specify a URL containing information on how users can appeal
 // disciplinary actions on your section. You can also leave this blank, in
 // which case users won't be given any information on how to appeal.
-exports.appealurl = 'Will be updated soon!';
+exports.appealurl = 'Will be updated soon! or Find Anrin Deo Avis and tell to him';
 
 // replsocketprefix - the prefix for the repl sockets to be listening on
 // replsocketmode - the file mode bits to use for the repl sockets
@@ -239,12 +240,25 @@ exports.grouplist = [
 	},
 	{
 		symbol: '#',
+		id: "founder",
+		name: "Room Founder",
+		inherit: '&',
+		jurisdiction: 'u',
+		roomowner: true.
+		roomdeowner :true;
+		roomleader: true,
+		roomonly: true
+		rmall: true
+	},
+	{
+		symbol: '#',
 		id: "owner",
 		name: "Room Owner",
 		inherit: '&',
 		jurisdiction: 'u',
 		roomleader: true,
 		roomonly: true
+		rmall: true
 	},
 	{
 		symbol: '&',
@@ -252,12 +266,13 @@ exports.grouplist = [
 		name: "Leader",
 		inherit: '@',
 		jurisdiction: 'u',
+		roomofounder: true,
+		roomdefounder: true
+		roomowner:true.
 		roommod: true,
 		roomdriver: true,
 		roomsubdriver: true,
-		roomonly: true,
 		tournamentsmanagement: true,
-		rmall: true
 	},
 	{
 		symbol: '-',
