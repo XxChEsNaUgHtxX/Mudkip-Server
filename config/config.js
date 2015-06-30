@@ -266,8 +266,6 @@ exports.grouplist = [
 		name: "Leader",
 		inherit: '@',
 		jurisdiction: 'u',
-		roomofounder: true,
-		roomdefounder: true
 		roomowner:true.
 		roommod: true,
 		roomdriver: true,
