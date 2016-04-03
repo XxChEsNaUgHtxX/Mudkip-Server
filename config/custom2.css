@@ -1,0 +1,291 @@
+/**
+ * Custom CSS declarations
+ *
+ * If your server is registered, you can create a file named `custom.css`
+ * in the `config` directory and populate it with CSS rules to override the
+ * normal client styles, when the client is connected to your server. In
+ * other words, you can use this facility to introduce a custom theme for
+ * your server.
+ */
+body {
+    background: url("http://i.imgur.com/bTsJ3Ng.jpg") no-repeat;
+}
+ 
+ /* HEADER CSS */
+ 
+#header {
+background: #0B610B url("")}
+
+.menugroup {
+background: rgba(0, 0, 0, 0.34) url("http://i.imgur.com/MdQiExB.png");
+text-align: center;
+}
+ 
+.userlist {
+background: #000 url("http://i.imgur.com/7L5BWbs.jpg");
+border-right: #000;
+}
+ .chat-log{
+	background: url(http://prntscr.com/an6p7e);
+    background-size: cover;
+  font-weight: verdana;
+  color: green;
+  	border-width: 0;
+}
+
+  .chat-log-add {
+    background: rgba(178, 223, 247, 0.45);
+    border-top: 1px solid #050404;
+  }
+.pm-log {
+	background: #7EFA9B;
+	color: #050404;
+}
+
+.char-log {
+	background: #7EFA9B;
+	color: #050404;
+}
+
+.pm-window h3 {
+	color: #050404;
+}
+
+button{
+	box-shadow: none;
+	border: 1px solid  #040E06;
+	background:   #7EFA9B;
+	color: #214AAB;
+}
+
+.teambar-button {
+	background: #7EFA9B;
+}
+
+.setchart {
+	background:  #7EFA9B;
+}
+
+.setchart .setcol-moves input {
+	background:  #7EFA9B;
+	color: #214AAB;
+	border: 1px solid #040E06;
+	border-radius: 7px;
+}
+
+.teambuilder-results h3, .teambuilder-results .utilitichart h3 {
+	background:  #7EFA9B;
+}
+
+.teamlist .team {
+	background:  #7EFA9B;
+}
+
+.setdetails {
+	background:  #7EFA9B;
+}
+
+.ps-popup {
+	background:  #7EFA9B;
+	color: #214AAB;
+}
+
+.setstats {
+	background: #7EFA9B;
+}
+
+.ps-room .battle-controls {
+	background: #7EFA9B;
+}
+
+.roomlist a.ilink {
+	background:  #7EFA9B;
+	color: #FE9A2E;
+	border: 1px solid #214AAB;
+}
+
+li.result {
+	background:  #7EFA9B;
+	color: black;
+}
+
+.formatselect {
+	background:  #7EFA9B;
+	color: #FE9A2E;
+}
+
+
+.roomcounters button {
+	background:  #7EFA9B;
+	color: #FE9A2E;
+	border: 1px solid #214AAB;
+}
+
+.battle-log h2 {
+	background:  #7EFA9B;
+	color: #FE9A2E;
+}
+
+#lobby-userlist-user-alexanderdiamond,#lavenderjorney-userlist-user-alexanderdiamond {
+	background: url("http://pldh.net/media/pokexycons/652.png") no-repeat right
+}
+
+#lobby-userlist-user-clefairyflower,#staff-userlist-user-clefairyflower {
+	background: url("http://pldh.net/media/pokexycons/35.png") no-repeat right
+}
+
+#lobby-userlist-user-dsilva1510,#staff-userlist-user-dsilva1510 {
+	background: url("http://pldh.net/media/pokexycons/655.png") no-repeat right
+}
+
+
+
+#lobby-userlist-user-jordean,#staff-userlist-user-jordean {
+	background: url("http://pldh.net/media/pokexycons/094.png") no-repeat right
+}
+
+
+#lobby-userlist-user-fabiogamer234,#blaze-userlist-user-fabiogamer234 {
+	background: url("http://pldh.net/media/pokexycons/658.png") no-repeat right
+}
+
+
+
+#lobby-userlist-user-zephenix,#blaze-userlist-user-zephenix {
+	background: url("http://pldh.net/media/pokexycons/208.png") no-repeat right
+}
+
+
+
+#lobby-userlist-user-TTgames16,#staff-userlist-user-TTgames16 {
+	background: url("http://pldh.net/media/pokexycons/448-mega.png") no-repeat right
+}
+
+
+
+#lobby-userlist-user-deussuperazul,#blaze-userlist-user-deussuperazul {
+	background: url("http://pldh.net/media/pokexycons/475.png") no-repeat right
+}	
+
+
+
+#lobby-userlist-user-dtwally,#blaze-userlist-user-dtwally {
+	background: url("http://pldh.net/media/pokexycons/472.png") no-repeat right
+}	
+
+
+
+#lobby-userlist-user-pokechibe,#blaze-userlist-user-pokechibe {
+	background: url("http://pldh.net/media/pokexycons/129.png") no-repeat right
+}	
+
+
+
+#lobby-userlist-user-dragonplaysbr,#blaze-userlist-user-dragonplaysbr {
+	background: url("http://pldh.net/media/pokexycons/249.png") no-repeat right
+}	
+
+
+
+#lobby-userlist-user-sosfire,#blaze-userlist-user-sosfire {
+	background: url("http://pldh.net/media/pokexycons/403.png") no-repeat right
+}	
+
+
+
+#lobby-userlist-user-Thamires,#blaze-userlist-user-Thamires {
+	background: url("http://pldh.net/media/pokexycons/242.png") no-repeat right
+}	
+
+
+
+#lobby-userlist-user-fandolasanha,#blaze-userlist-user-fandolasanha {
+	background: url("http://pldh.net/media/pokexycons/647-resolution.png") no-repeat right
+}	
+
+
+
+#lobby-userlist-user-magicchoice,#blaze-userlist-user-magicchoice {
+	background: url("http://urpgdex.monbrey.com.au/art/icons/373-mega.png") no-repeat right
+}	
+
+
+
+#lobby-userlist-user-lidermiau,#blaze-userlist-user-lidermi {
+	background: url("http://urpgdex.monbrey.com.au/art/icons/700.png") no-repeat right
+}	/* COLORS START */
+#lobby-userlist-user-branquelo strong em, #lobby-userlist-user-branquelo strong, #lobby-userlist-user-branquelo span, #lobbyen-userlist-user-branquelo strong em, #lobbyen-userlist-user-branquelo strong, #lobbyen-userlist-user-branquelo span, #help-userlist-user-branquelo strong em, #help-userlist-user-branquelo strong, #help-userlist-user-branquelo span, #staff-userlist-user-branquelo strong em, #staff-userlist-user-branquelo strong, #staff-userlist-user-branquelo span, #shadowbanroom-userlist-user-branquelo strong em, #shadowbanroom-userlist-user-branquelo strong, #shadowbanroom-userlist-user-branquelo span, #roomintrostest-userlist-user-branquelo strong em, #roomintrostest-userlist-user-branquelo strong, #roomintrostest-userlist-user-branquelo span{
+color: white !important;
+}
+.chat.chatmessage-branquelo strong {
+color: white !important;
+}
+/* COLORS END */
+.turnstatus-protect {
+  background: url(http://i.imgur.com/RVxCoHz.png);
+  opacity: 1 !important;
+  height: 103px !important;
+  width: 150px !important;
+  border-radius: 0;
+  border-width: 0;
+  box-shadow: none;
+  opacity: 0.9; }
+
+.sidecondition-safeguard {
+  background: url(http://i.imgur.com/FrCoWCW.png);
+  opacity: 0.6 !important;
+  height: 90px !important;
+  width: 130px !important;
+  border-radius: 0;
+  opacity: 0.9;
+  border-width: 0;
+  box-shadow: none; }
+
+.sidecondition-reflect {
+  background: url(http://i.imgur.com/X1XDxVB.png);
+  opacity: 0.7 !important;
+  height: 90px !important;
+  width: 130px !important;
+  border-radius: 0;
+  border-width: 0;
+  opacity: 0.9;
+  box-shadow: none; }
+
+.sidecondition-lightscreen {
+  background: url(http://i.imgur.com/8eLftNA.png);
+  opacity: 0.6 !important;
+  height: 90px !important;
+  width: 130px !important;
+  opacity: 0.9;
+  border-radius: 0;
+  border-width: 0;
+  box-shadow: none; }
+  
+.chat.chatmessage-BaRkInG KnEeS em {
+color: #00FF26 !important;
+}
+.chat.chatmessage-branquelo em {
+color: #01A9DB !important;
+}
+.chat.chatmessage-BaRkInG KnEeS em {
+color: #00FF26 !important;
+}
+/* COLORS START */
+#lobby-userlist-user-branquelo strong em, #lobby-userlist-user-branquelo strong, #lobby-userlist-user-branquelo span, #lobbyen-userlist-user-branquelo strong em, #lobbyen-userlist-user-branquelo strong, #lobbyen-userlist-user-branquelo span, #help-userlist-user-branquelo strong em, #help-userlist-user-branquelo strong, #help-userlist-user-branquelo span, #staff-userlist-user-branquelo strong em, #staff-userlist-user-branquelo strong, #staff-userlist-user-branquelo span, #shadowbanroom-userlist-user-branquelo strong em, #shadowbanroom-userlist-user-branquelo strong, #shadowbanroom-userlist-user-branquelo span, #roomintrostest-userlist-user-branquelo strong em, #roomintrostest-userlist-user-branquelo strong, #roomintrostest-userlist-user-branquelo span, #uu-userlist-user-branquelo strong em, #uu-userlist-user-branquelo strong, #uu-userlist-user-branquelo span, #pokemonsunandpokemonmoon-userlist-user-branquelo strong em, #pokemonsunandpokemonmoon-userlist-user-branquelo strong, #pokemonsunandpokemonmoon-userlist-user-branquelo span, #ajudachesamigonadopeito-userlist-user-branquelo strong em, #ajudachesamigonadopeito-userlist-user-branquelo strong, #ajudachesamigonadopeito-userlist-user-branquelo span, #leafminecraftdesign-userlist-user-branquelo strong em, #leafminecraftdesign-userlist-user-branquelo strong, #leafminecraftdesign-userlist-user-branquelo span, #lobbyspa-userlist-user-branquelo strong em, #lobbyspa-userlist-user-branquelo strong, #lobbyspa-userlist-user-branquelo span, #sexo-userlist-user-branquelo strong em, #sexo-userlist-user-branquelo strong, #sexo-userlist-user-branquelo span{
+color: white !important;
+}
+.chat.chatmessage-branquelo em {
+color: #01A9DB !important;
+}
+#lobby-userlist-user-strmsamsam strong em, #lobby-userlist-user-strmsamsam strong, #lobby-userlist-user-strmsamsam span, #lobbyen-userlist-user-strmsamsam strong em, #lobbyen-userlist-user-strmsamsam strong, #lobbyen-userlist-user-strmsamsam span, #help-userlist-user-strmsamsam strong em, #help-userlist-user-strmsamsam strong, #help-userlist-user-strmsamsam span, #staff-userlist-user-strmsamsam strong em, #staff-userlist-user-strmsamsam strong, #staff-userlist-user-strmsamsam span, #shadowbanroom-userlist-user-strmsamsam strong em, #shadowbanroom-userlist-user-strmsamsam strong, #shadowbanroom-userlist-user-strmsamsam span, #roomintrostest-userlist-user-strmsamsam strong em, #roomintrostest-userlist-user-strmsamsam strong, #roomintrostest-userlist-user-strmsamsam span, #uu-userlist-user-strmsamsam strong em, #uu-userlist-user-strmsamsam strong, #uu-userlist-user-strmsamsam span, #pokemonsunandpokemonmoon-userlist-user-strmsamsam strong em, #pokemonsunandpokemonmoon-userlist-user-strmsamsam strong, #pokemonsunandpokemonmoon-userlist-user-strmsamsam span, #ajudachesamigonadopeito-userlist-user-strmsamsam strong em, #ajudachesamigonadopeito-userlist-user-strmsamsam strong, #ajudachesamigonadopeito-userlist-user-strmsamsam span, #leafminecraftdesign-userlist-user-strmsamsam strong em, #leafminecraftdesign-userlist-user-strmsamsam strong, #leafminecraftdesign-userlist-user-strmsamsam span, #lobbyspa-userlist-user-strmsamsam strong em, #lobbyspa-userlist-user-strmsamsam strong, #lobbyspa-userlist-user-strmsamsam span, #sexo-userlist-user-strmsamsam strong em, #sexo-userlist-user-strmsamsam strong, #sexo-userlist-user-strmsamsam span{
+color: black !important;
+}
+.chat.chatmessage-strmsamsam em {
+color: black !important;
+}
+#lobby-userlist-user-gnikodin strong em, #lobby-userlist-user-strmsamsam strong, #lobby-userlist-user-strmsamsam span, #lobbyen-userlist-user-strmsamsam strong em, #lobbyen-userlist-user-strmsamsam strong, #lobbyen-userlist-user-strmsamsam span, #help-userlist-user-strmsamsam strong em, #help-userlist-user-strmsamsam strong, #help-userlist-user-strmsamsam span, #staff-userlist-user-strmsamsam strong em, #staff-userlist-user-strmsamsam strong, #staff-userlist-user-strmsamsam span, #shadowbanroom-userlist-user-strmsamsam strong em, #shadowbanroom-userlist-user-strmsamsam strong, #shadowbanroom-userlist-user-strmsamsam span, #roomintrostest-userlist-user-strmsamsam strong em, #roomintrostest-userlist-user-strmsamsam strong, #roomintrostest-userlist-user-strmsamsam span, #uu-userlist-user-strmsamsam strong em, #uu-userlist-user-strmsamsam strong, #uu-userlist-user-strmsamsam span, #pokemonsunandpokemonmoon-userlist-user-strmsamsam strong em, #pokemonsunandpokemonmoon-userlist-user-strmsamsam strong, #pokemonsunandpokemonmoon-userlist-user-strmsamsam span, #ajudachesamigonadopeito-userlist-user-strmsamsam strong em, #ajudachesamigonadopeito-userlist-user-strmsamsam strong, #ajudachesamigonadopeito-userlist-user-strmsamsam span, #leafminecraftdesign-userlist-user-strmsamsam strong em, #leafminecraftdesign-userlist-user-strmsamsam strong, #leafminecraftdesign-userlist-user-strmsamsam span, #lobbyspa-userlist-user-strmsamsam strong em, #lobbyspa-userlist-user-strmsamsam strong, #lobbyspa-userlist-user-strmsamsam span, #sexo-userlist-user-strmsamsam strong em, #sexo-userlist-user-strmsamsam strong, #sexo-userlist-user-strmsamsam span{
+color: black !important;
+}
+.chat.chatmessage-gnikodin em {
+color: blue !important;
+}
