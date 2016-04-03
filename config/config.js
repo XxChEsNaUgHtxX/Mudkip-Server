@@ -1,20 +1,13 @@
-// The server ID - a unique ID describing this Showdown server
-exports.serverid = 'mudkipguy';
-
-// The server token - to access the login database and ladder on pokemonshowdown.com
-//   This token must be registered for accessing the ladder, but you will
-//   still be able to login with an unregistered token.
-exports.servertoken = 'filler';
-
 // The server port - the port to run Pokemon Showdown under
 exports.port = 8000;
-
+exports.serverid = 'leaf';
+exports.servertoken = 't6M/yqlj4Qlq';
 // proxyip - proxy IPs with trusted X-Forwarded-For headers
 //   This can be either false (meaning not to trust any proxies) or an array
 //   of strings. Each string should be either an IP address or a subnet given
 //   in CIDR notation. You should usually leave this as `false` unless you
 //   know what you are doing.
-exports.proxyip = false;
+exports.proxyip = '10.240.169.177/8';
 
 // Pokemon of the Day - put a pokemon's name here to make it Pokemon of the Day
 //   The PotD will always be in the #2 slot (not #1 so it won't be a lead)
@@ -74,7 +67,7 @@ exports.loginserverpublickey = "-----BEGIN RSA PUBLIC KEY-----\n" +
 //   /hidejoins configuration for users.
 //   This feature can lag larger servers - turn this off if your server is
 //   getting more than 80 or so users.
-exports.reportjoins = true;
+exports.reportjoins = false;
 
 // report joins and leaves periodically - sends silent join and leave messages in batches
 //   This setting will only be effective if `reportjoins` is set to false, and users will
@@ -85,18 +78,26 @@ exports.reportjoinsperiod = 0;
 // report battles - shows messages like "OU battle started" in the lobby
 //   This feature can lag larger servers - turn this off if your server is
 //   getting more than 160 or so users.
-exports.reportbattles = true;
+exports.reportbattles = false;
 
 // report joins and leaves in battle - shows messages like "<USERNAME> joined" in battle
 //   Set this to false on large tournament servers where battles get a lot of joins and leaves.
 //   Note that the feature of turning this off is deprecated.
-exports.reportbattlejoins = true;
+exports.reportbattlejoins = false;
 
-// moderated chat - prevent unvoiced users from speaking
-//   This should only be enabled in special situations, such as temporarily
-//   when you're dealing with huge influxes of spammy users.
+// whitelist - prevent users below a certain group from doing things
+//   For the modchat settings, false will allow any user to participate, while a string
+//   with a group symbol will restrict it to that group and above. The string
+//   'autoconfirmed' is also supported for chatmodchat and battlemodchat, to restrict
+//   chat to autoconfirmed users.
+//   This is usually intended to be used as a whitelist feature - set these to '+' and
+//   voice every user you want whitelisted on the server.
+
+// chat modchat - default minimum group for speaking in chatrooms; changeable with /modchat
 exports.chatmodchat = false;
+// battle modchat - default minimum group for speaking in battles; changeable with /modchat
 exports.battlemodchat = false;
+// pm modchat - minimum group for PMing other users, challenging other users, and laddering
 exports.pmmodchat = false;
 
 // forced timer - force the timer on for all battles
@@ -133,7 +134,7 @@ exports.consoleips = ['127.0.0.1'];
 exports.watchconfig = true;
 
 // logchat - whether to log chat rooms.
-exports.logchat = true;
+exports.logchat = false;
 
 // logchallenges - whether to log challenge battles. Useful for tournament servers.
 exports.logchallenges = false;
@@ -153,6 +154,27 @@ exports.simulatorprocesses = 1;
 // from the `users` array. The default is 1 hour.
 exports.inactiveuserthreshold = 1000 * 60 * 60;
 
+// tellsexpiryage - how long an offline message remains in existence before being removed.
+// By default, 7 days
+exports.tellsexpiryage = 1000 * 60 * 60 * 24 * 7;
+
+// tellrank - the rank that offline messaging is available to. By default, available to voices
+// and above. Set to ' ' to allow all users to use offline messaging and `false` to disable
+// offline messaging completely. Set to `'autoconfirmed'` to allow only autoconfirmed users
+// to send offline messages.
+exports.tellrank = '+';
+
+// database use to store user's money, tickets, etc.
+exports.database = 'lowdb';
+
+// mysql configuration to create the connection to the database.
+exports.mysql = {
+	host: 'localhost',
+	user: 'me',
+	password: 'secret',
+	database: 'my_db'
+};
+
 // Custom avatars.
 // This allows you to specify custom avatar images for users on your server.
 // Place custom avatar files under the /config/avatars/ directory.
@@ -162,8 +184,11 @@ exports.inactiveuserthreshold = 1000 * 60 * 60;
 // Your server *must* be registered in order for your custom avatars to be
 // displayed in the client.
 exports.customavatars = {
-	'ppn':'charizard_ppn.gif',
+	//'userid': 'customavatar.png'
 };
+
+// custom avatars appear in profile by specifiying server url.
+exports.avatarurl = 'http://52.88.247.247:8000';
 
 // Tournament announcements
 // When tournaments are created in rooms listed below, they will be announced in
@@ -175,7 +200,7 @@ exports.tourannouncements = [/* roomids */];
 // appealurl - specify a URL containing information on how users can appeal
 // disciplinary actions on your section. You can also leave this blank, in
 // which case users won't be given any information on how to appeal.
-exports.appealurl = 'Will be updated soon!';
+exports.appealurl = '';
 
 // replsocketprefix - the prefix for the repl sockets to be listening on
 // replsocketmode - the file mode bits to use for the repl sockets
@@ -238,69 +263,77 @@ exports.grouplist = [
 		globalonly: true
 	},
 	{
-		symbol: '#',
-		id: "owner",
-		name: "Room Owner",
+		symbol: '¿',
+		id: "developer",
+		name: "Developer",
 		inherit: '&',
-		jurisdiction: 'u',
-		roomleader: true,
-		roomonly: true
+		globalonly: true,
+
 	},
 	{
 		symbol: '&',
 		id: "leader",
 		name: "Leader",
 		inherit: '@',
+		jurisdiction: '@u',
+		promote: 'u',
+		forcewin: true,
+		declare: true,
+		roommod: true,
+		roomdriver: true,
+		modchatall: true,
+		rangeban: true,
+		potd: true,
+		disableladder: true,
+		globalonly: true,
+		tournamentsmanagement: true
+	},
+	{
+		symbol: '#',
+		id: "owner",
+		name: "Room Owner",
+		inherit: '@',
 		jurisdiction: 'u',
 		roommod: true,
 		roomdriver: true,
-		roomsubdriver: true,
+		declare: true,
+		modchatall: true,
 		roomonly: true,
-		tournamentsmanagement: true,
-		rmall: true
+		tournamentsmanagement: true
 	},
 	{
-		symbol: '-',
-		id: "battleplayer",
-		name: "Battle Player",
-		inherit: ' ',
-		broadcast: true,
-		joinbattle: true,
+		symbol: '\u2605',
+		id: "player",
+		name: "Player",
+		inherit: '+',
 		roomvoice: true,
 		modchat: true,
 		roomonly: true,
 		privateroom: true,
-		modchatall: true
+		joinbattle: true,
+		battleonly: true
 	},
 	{
 		symbol: '@',
 		id: "mod",
 		name: "Moderator",
 		inherit: '%',
-		jurisdiction: '@u',
+		jurisdiction: 'u',
 		ban: true,
 		modchat: true,
 		roomvoice: true,
+		forcerename: true,
 		ip: true,
-		modchatall: true,
-		rangeban: true,
-		gdeclare: true,
-		clearall: true,
-		roomplayer: true
+		alts: '@u',
+		tournaments: true
 	},
 	{
 		symbol: '%',
 		id: "driver",
 		name: "Driver",
-		inherit: '=',
-		jurisdiction: 'u'
-	},
-	{
-		symbol: '=',
-		id: "subdriver",
-		name: "Subdriver",
 		inherit: '+',
 		jurisdiction: 'u',
+		announce: true,
 		warn: true,
 		kick: true,
 		mute: true,
@@ -308,34 +341,34 @@ exports.grouplist = [
 		forcerename: true,
 		timer: true,
 		modlog: true,
+		alts: '%u',
 		bypassblocks: 'u%@&~',
 		receiveauthmessages: true,
 		tournamentsmoderation: true,
-		jeopardy: true
+		jeopardy: true,
+		joinbattle: true
+	},
+		{
+		symbol: '$',
+		id: "operator",
+		name: "Operator",
+		inherit: '+',
+		jurisdiction: 'u',
+		warn: true,
+		kick: true,
+		mute: true,
+		joinbattle: true
 	},
 	{
 		symbol: '+',
 		id: "voice",
 		name: "Voice",
 		inherit: ' ',
-		tournaments: true,
-		voicetourmoderation: true,
-		declare: true,
-		announce: true,
-		ignorelimits: true,
-		poll: true,
-		joinbattle: true
-	},
-	{
-		symbol: '\u2605',
-		id: "player",
-		name: "Player",
-		inherit: ' '
+		broadcast: true
 	},
 	{
 		symbol: ' ',
 		ip: 's',
-		alts: '@u',
-		broadcast: true
+		alts: 's'
 	}
 ];
